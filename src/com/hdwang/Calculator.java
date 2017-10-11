@@ -1,3 +1,7 @@
+/**
+ * Calculator is aim to solve the big number calculate problems. It can do number calculate which beyond the long type scope and the double type scope.
+ * And it also solve the decimal calculate problem in java,because it change decimal number to integer number to calculate,and than change the result calculated to decimal number.
+ */
 package com.hdwang;
 
 import java.util.regex.Matcher;

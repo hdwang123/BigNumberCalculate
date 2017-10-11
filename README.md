@@ -1,7 +1,7 @@
 # BigNumberCalculate
 
 1.describe
-This is a project to solve large number calculation problems. This calculator can compute numbers beyond the long type scope and beyond the double type scope.
+This is a project which provide a function to calculate big numbers  aim to produce a sample way to solve this problem and can be used / understand and modified easily. This calculator can compute numbers beyond the long type scope and beyond the double type scope.And it also solve the decimal calculate problem in java,because it change decimal number to integer number to calculate,and than change the result calculated to decimal number.
 
 2.use example
 How to use it,please to see the Main.java, Thank you!
