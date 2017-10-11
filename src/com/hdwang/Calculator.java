@@ -917,7 +917,7 @@ public class Calculator {
      * @return 是否合法
      */
     public static boolean integerValid(String numStr){
-        Pattern pattern = Pattern.compile("^[1-9]\\d*$|0");
+        Pattern pattern = Pattern.compile("^[1-9]\\d*$|^0$");
         Matcher matcher = pattern.matcher(numStr);
         return matcher.matches();
     }
@@ -929,7 +929,7 @@ public class Calculator {
      */
     public static boolean decimalValid(String numStr){
         //正整数+0+非0开头小数+0开头小数
-        Pattern pattern = Pattern.compile("^[1-9]\\d*$|0|^[1-9]\\d*\\.?\\d+$|0\\.\\d+");
+        Pattern pattern = Pattern.compile("^[1-9]\\d*$|^0$|^[1-9]\\d*\\.?\\d+$|^0\\.\\d+$");
         Matcher matcher = pattern.matcher(numStr);
         return matcher.matches();
     }
@@ -941,7 +941,7 @@ public class Calculator {
      */
     public static boolean numberValid(String numStr){
         //正整数+0+非0开头小数+0开头小数
-        Pattern pattern = Pattern.compile("^-?[1-9]\\d*$|0|^-?[1-9]\\d*\\.?\\d+$|-?0\\.\\d+");
+        Pattern pattern = Pattern.compile("^-?[1-9]\\d*$|^0$|^-?[1-9]\\d*\\.?\\d+$|^-?0\\.\\d+$");
         Matcher matcher = pattern.matcher(numStr);
         return matcher.matches();
     }
