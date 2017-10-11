@@ -972,6 +972,9 @@ public class Calculator {
      * @return 结果
      */
     public static String removeHighZero(String str){
+        if("0".equals(str)){ //特殊情况
+            return str;
+        }
         StringBuilder builder = new StringBuilder();
         boolean exsitHighNotZero = false;
         for(int i=0;i<str.length();i++){
