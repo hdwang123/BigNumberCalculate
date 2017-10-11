@@ -4,7 +4,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 /**
- * 大数四则运算（超出long型的大数（64位：18446744073709551615））
+ * 大数四则运算（实现超出long型、double型的数据运算）
  * Created by hdwang on 2017/10/9.
  */
 public class Calculator {
@@ -909,8 +909,6 @@ public class Calculator {
         }
     }
 
-
-
     /**
      * 校验非负整数是否合法
      * @param numStr 数字字符串
@@ -968,12 +966,45 @@ public class Calculator {
     }
 
     /**
+     * Created by hdwang on 2017/10/10.
+     * 相除结果
+     */
+    private static class DivideResult {
+
+        /**
+         * 取整结果
+         */
+        private String r;
+
+        /**
+         * 取余结果
+         */
+        private String yu;
+
+        public String getR() {
+            return r;
+        }
+
+        public void setR(String r) {
+            this.r = r;
+        }
+
+        public String getYu() {
+            return yu;
+        }
+
+        public void setYu(String yu) {
+            this.yu = yu;
+        }
+    }
+
+    /**
      * 除法转换为减法
      * @param numStr1 数1（被除数）
      * @param numStr2 数2（除数）
      * @return 除的结果
      */
-    public static DivideResult getDivideResult(String numStr1,String numStr2){
+    private static DivideResult getDivideResult(String numStr1,String numStr2){
         DivideResult result = new DivideResult();
         String r = "";
        // String times = "0";
@@ -1002,7 +1033,7 @@ public class Calculator {
      * @param str 字符串
      * @return 结果
      */
-    public static String removeHighZero(String str){
+    private static String removeHighZero(String str){
         if("0".equals(str)){ //特殊情况
             return str;
         }
@@ -1020,4 +1051,6 @@ public class Calculator {
         }
         return builder.toString();
     }
+
+
 }

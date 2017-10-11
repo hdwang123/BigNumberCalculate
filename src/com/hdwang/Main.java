@@ -28,46 +28,48 @@ public class Main {
                 continue;
             }
 
-            long nt1 = System.nanoTime();
-            String r1 = addNumber(numStr1, numStr2);
-            System.out.println(String.format("大数加法计算：%s+%s%s=%s,cost time:%sms", numStr1, numStr2,r1.length()>50?"\n":"", r1,(System.nanoTime()-nt1)/1000000f));
+            System.out.println();
 
             try {
                 System.out.println("加法直接计算：" + (Double.parseDouble(numStr1) + Double.parseDouble(numStr2)));
             }catch (Exception ex){
                 System.out.println("加法直接计算："+ex.getClass().getName());
             }
+            long nt1 = System.nanoTime();
+            String r1 = addNumber(numStr1, numStr2);
+            System.out.println(String.format("大数加法计算：\n %s\n+%s\n=%s\n", numStr1, numStr2,r1));
 
-            nt1 = System.nanoTime();
-            String r2 = subtractNumber(numStr1, numStr2);
-            System.out.println(String.format("大数减法计算：%s-%s%s=%s,cost time:%sms", numStr1, numStr2,r2.length()>50?"\n":"", r2,(System.nanoTime()-nt1)/1000000f));
+
             try {
                 System.out.println("减法直接计算：" + (Double.parseDouble(numStr1) - Double.parseDouble(numStr2)));
             }catch (Exception ex){
                 System.out.println("减法直接计算："+ex.getClass().getName());
             }
-
-
             nt1 = System.nanoTime();
-            String r3 = multiplyNumber(numStr1, numStr2);
-            System.out.println(String.format("大数乘法计算：%s*%s%s=%s,cost time:%sms", numStr1, numStr2,r3.length()>50?"\n":"", r3,(System.nanoTime()-nt1)/1000000f));
+            String r2 = subtractNumber(numStr1, numStr2);
+            System.out.println(String.format("大数减法计算：\n %s\n-%s\n=%s\n", numStr1,numStr2, r2));
+
+
             try {
                 System.out.println("乘法直接计算：" + (Double.parseDouble(numStr1) * Double.parseDouble(numStr2)));
             }catch (Exception ex){
                 System.out.println("乘法直接计算："+ex.getClass().getName());
             }
+            nt1 = System.nanoTime();
+            String r3 = multiplyNumber(numStr1, numStr2);
+            System.out.println(String.format("大数乘法计算：\n %s\n*%s\n=%s\n", numStr1,  numStr2, r3));
 
-            try {
-                nt1 = System.nanoTime();
-                String r4 = divideNumber(numStr1, numStr2);
-                System.out.println(String.format("大数除法计算：%s/%s%s=%s,cost time:%sms", numStr1, numStr2, r4.length() > 50 ? "\n" : "", r4,(System.nanoTime()-nt1)/1000000f));
-            }catch (Exception ex){
-                System.out.println("大数除法计算："+ex.getClass().getName());
-            }
             try {
                 System.out.println("除法直接计算：" + ((double)Double.parseDouble(numStr1) / (double) Double.parseDouble(numStr2)));
             }catch (Exception ex){
                 System.out.println("除法直接计算："+ex.getClass().getName());
+            }
+            try {
+                nt1 = System.nanoTime();
+                String r4 = divideNumber(numStr1, numStr2);
+                System.out.println(String.format("大数除法计算：\n %s\n/%s\n=%s\n", numStr1,numStr2, r4));
+            }catch (Exception ex){
+                System.out.println("大数除法计算："+ex.getClass().getName());
             }
 
             System.out.println("退出输入q，否则继续");
