@@ -605,14 +605,14 @@ public class Calculator {
         //调用非负整数减法运算
         String result = subtract(decimal1,decimal2);
         boolean isNegative = false;
+        //两数相减可能出现负号，特殊处理一下
+        if(result.startsWith("-")){
+            isNegative = true;
+            result = result.replace("-","");
+        }
         //结果添加小数点
         StringBuilder builder = new StringBuilder();
         if(maxDecimalLen != 0) { //不是整数
-            //两数相减可能出现负号，特殊处理一下
-            if(result.startsWith("-")){
-                isNegative = true;
-                result = result.replace("-","");
-            }
             //两数相减可能使长度减小，特殊处理一下
             if(result.length()<= maxDecimalLen){
                 String padLeft = "";
@@ -623,13 +623,13 @@ public class Calculator {
             }
             builder.append(result);
             builder.insert(result.length() - maxDecimalLen, ".");
-
-            //负号还原
-            if(isNegative){
-                builder.insert(0,"-");
-            }
+            result = builder.toString();
         }
-        return  builder.toString();
+        //负号还原
+        if(isNegative){
+            result = "-"+result;
+        }
+        return  result;
     }
 
     /**
@@ -688,8 +688,9 @@ public class Calculator {
             }
             builder.append(result);
             builder.insert(result.length() - sumDecimalLen, ".");
+            result = builder.toString();
         }
-        return  builder.toString();
+        return  result;
     }
 
     /**
