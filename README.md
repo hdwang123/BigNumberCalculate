@@ -2,7 +2,7 @@
 
 ## 1.describe
 <div>
-This is a project which provide a function to calculate big numbers  aim to produce a sample way to solve this problem and can be used / understand and modified easily. This calculator can compute numbers beyond the long type scope and beyond the double type scope.And it also solve the decimal calculate problem in java,because it change decimal number to integer number to calculate,and than change the result calculated to decimal number.
+This is a project which provide a function to calculate big numbers  aim to produce a sample way to solve this problem and can be used / understand and modified easily. This calculator can compute numbers beyond the long type scope and beyond the double type scope.And it also solve the decimal calculate problem in java,because it change decimal number to integer number to calculate,and then change the result calculated to decimal number.
 </div>
 
 ## 2.use example
