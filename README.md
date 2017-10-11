@@ -1,16 +1,16 @@
 # BigNumberCalculate
 
-##1.describe
+## 1.describe
 <div>
 This is a project which provide a function to calculate big numbers  aim to produce a sample way to solve this problem and can be used / understand and modified easily. This calculator can compute numbers beyond the long type scope and beyond the double type scope.And it also solve the decimal calculate problem in java,because it change decimal number to integer number to calculate,and than change the result calculated to decimal number.
 </div>
 
-##2.use example
+## 2.use example
 <div>
 How to use it,please to see the Main.java, Thank you!
 </div>
 
-##3.run example
+## 3.run example
 <div>
 <pre>
 请输入第一个数：
@@ -45,5 +45,3 @@ How to use it,please to see the Main.java, Thank you!
 退出输入q，否则继续
 </pre>
 </div>
-</body>
-</html>
