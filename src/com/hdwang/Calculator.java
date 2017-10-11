@@ -770,7 +770,12 @@ public class Calculator {
         if(num1Negative){ //数1是负数
             if(num2Negative){ //数2是负数
                 // -a + -b = -(a+b)
-                return "-" + addDecimal(num1,num2);
+                String result = addDecimal(num1,num2);
+                if("0".equals(result)){ //-0特殊情况处理
+                    return result;
+                }else {
+                    return  "-"+result;
+                }
             }else{
                 // -a + b = b-a
                 return subtractDecimal(num2,num1);
@@ -804,7 +809,12 @@ public class Calculator {
                 return subtractDecimal(num2,num1);
             }else{
                 // -a - b = -(a+b)
-                return "-"+addDecimal(num1,num2);
+                String result = addDecimal(num1,num2);
+                if("0".equals(result)){ //-0特殊情况处理
+                    return result;
+                }else {
+                    return  "-"+result;
+                }
             }
         }else{
             if(num2Negative){
@@ -835,12 +845,22 @@ public class Calculator {
                 return multiplyDecimal(num1,num2);
             }else{
                 // -a * b = -(a*b)
-                return "-"+multiplyDecimal(num1,num2);
+                String result = multiplyDecimal(num1,num2);
+                if("0".equals(result)){ //-0特殊情况处理
+                    return result;
+                }else {
+                    return  "-"+result;
+                }
             }
         }else{
             if(num2Negative){
                 // a * -b = -(a*b)
-                return "-"+multiplyDecimal(num1,num2);
+                String result = multiplyDecimal(num1,num2);
+                if("0".equals(result)){ //-0特殊情况处理
+                    return result;
+                }else {
+                    return  "-"+result;
+                }
             }else{
                 // a * b
                 return  multiplyDecimal(num1,num2);
@@ -866,12 +886,22 @@ public class Calculator {
                 return divideDecimal(num1,num2);
             }else{
                 // -a / b = -(a/b)
-                return "-"+divideDecimal(num1,num2);
+                String result = divideDecimal(num1,num2);
+                if("0".equals(result)){ //-0特殊情况处理
+                    return result;
+                }else {
+                    return  "-"+result;
+                }
             }
         }else{
             if(num2Negative){
                 // a / -b = -(a/b)
-                return "-"+divideDecimal(num1,num2);
+                String result = divideDecimal(num1,num2);
+                if("0".equals(result)){ //-0特殊情况处理
+                    return result;
+                }else {
+                    return  "-"+result;
+                }
             }else{
                 // a / b
                 return  divideDecimal(num1,num2);
