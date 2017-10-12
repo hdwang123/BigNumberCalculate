@@ -104,17 +104,35 @@ public class Main {
         BigDecimal b1 = new BigDecimal(num1);
         BigDecimal b2 = new BigDecimal(num2);
         System.out.println(b1.add(b2));
+        System.out.println("add cost time:"+(System.nanoTime()-time1)); //cost time:5758646ns
+
+        time1 = System.nanoTime();
         System.out.println(b1.subtract(b2));
+        System.out.println("subtract cost time:"+(System.nanoTime()-time1)); //cost time:463669ns
+
+        time1 = System.nanoTime();
         System.out.println(b1.multiply(b2));
+        System.out.println("multiply cost time:"+(System.nanoTime()-time1)); //cost time:1101728ns
+
+        time1 = System.nanoTime();
         System.out.println(b1.divide(b2,16,BigDecimal.ROUND_HALF_UP)); //保留10位，四舍五入
-        System.out.println("cost time:"+(System.nanoTime()-time1)); //cost time:6565140ns
+        System.out.println("cost time:"+(System.nanoTime()-time1)); //cost time:196120ns
 
         //自带的计算(效率低了7倍，哎！)
         time1 = System.nanoTime();
         System.out.println(addNumber(num1,num2));
+        System.out.println("add cost time:"+(System.nanoTime()-time1)); //cost time:3332746ns
+
+        time1 = System.nanoTime();
         System.out.println(subtractNumber(num1,num2));
+        System.out.println("subtract cost time:"+(System.nanoTime()-time1)); //cost time:1107821ns
+
+        time1 = System.nanoTime();
         System.out.println(multiplyNumber(num1,num2));
+        System.out.println("multiply cost time:"+(System.nanoTime()-time1)); //cost time:6821170ns
+
+        time1 = System.nanoTime();
         System.out.println(divideNumber(num1,num2));
-        System.out.println("cost time:"+(System.nanoTime()-time1)); //cost time:41036076ns
+        System.out.println("cost time:"+(System.nanoTime()-time1)); //cost time:43928179ns
     }
 }
