@@ -118,7 +118,7 @@ public class Main {
         System.out.println(b1.divide(b2,16,BigDecimal.ROUND_HALF_UP)); //保留10位，四舍五入
         System.out.println("cost time:"+(System.nanoTime()-time1)); //cost time:196120ns
 
-        //自带的计算(效率低了7倍，哎！)
+        //自己的计算(效率低了7倍，哎！)
         time1 = System.nanoTime();
         System.out.println(addNumber(num1,num2));
         System.out.println("add cost time:"+(System.nanoTime()-time1)); //cost time:3332746ns
