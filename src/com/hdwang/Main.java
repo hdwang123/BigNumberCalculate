@@ -1,5 +1,6 @@
 package com.hdwang;
 
+import java.math.BigDecimal;
 import java.util.Scanner;
 import static com.hdwang.Calculator.*;
 
@@ -8,11 +9,10 @@ public class Main {
     public static void main(String[] args) {
 	    // write your code here
 
+        testBigDecimal();
 
         Scanner scanner = new Scanner(System.in);
-
         boolean loop = true;
-
         while (loop) {
             System.out.println("请输入第一个数：");
             String numStr1 = scanner.nextLine();
@@ -81,5 +81,40 @@ public class Main {
             }
         }
 
+    }
+
+    /**
+     * compare the BigDecimal and my algorithm
+     *
+     * the conclusion is：
+     *
+     * advantage
+     * easily to understand.
+     *
+     * shortcoming
+     * cost time more.
+     *
+     */
+    private static void testBigDecimal(){
+        String num1 = "-143425465345654765746864856785967896967967098670698598756951434254653456547657468648567859678969679670986706985987569514342546534565476574686485678596789696796709867069859875695";
+        String num2 = "425363764765875875867980987675623542542542653653737373377331434254653456547657468648567859678969679670986706985987569514342546534565476574686485678596789696796709867069859875695";
+
+
+        long time1 = System.nanoTime();
+        BigDecimal b1 = new BigDecimal(num1);
+        BigDecimal b2 = new BigDecimal(num2);
+        System.out.println(b1.add(b2));
+        System.out.println(b1.subtract(b2));
+        System.out.println(b1.multiply(b2));
+        System.out.println(b1.divide(b2,16,BigDecimal.ROUND_HALF_UP)); //保留10位，四舍五入
+        System.out.println("cost time:"+(System.nanoTime()-time1)); //cost time:6565140ns
+
+        //自带的计算(效率低了7倍，哎！)
+        time1 = System.nanoTime();
+        System.out.println(addNumber(num1,num2));
+        System.out.println(subtractNumber(num1,num2));
+        System.out.println(multiplyNumber(num1,num2));
+        System.out.println(divideNumber(num1,num2));
+        System.out.println("cost time:"+(System.nanoTime()-time1)); //cost time:41036076ns
     }
 }
